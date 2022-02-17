@@ -43,7 +43,7 @@
                                                 <div class="file-field input-field col s8">
                                                     <div class="btn">
                                                         <input type="hidden" name="MAX_FILE_SIZE" value="2097152" placeholder="Seleccione sólo archivos de imagen"/>
-                                                        <input type="file" name="files[]" multiple="multiple" />
+                                                        <input for="img" type="file" name="files[]" multiple="multiple" />
                                                     </div>
                                                 </div>
                                             </div>
@@ -58,7 +58,7 @@
                     <div class="row py-3">
                     <div class="col-md-6">
                            <div class="form-group">
-                               <label for="Codigo">Codigo de Producto</label>
+                               <label for="codigo">Codigo de Producto</label>
                                <input type="text" id="codigo" name="codigo" class="form-control" required placeholder="Ingrese el codigo del producto">
                            </div>
                         </div>
