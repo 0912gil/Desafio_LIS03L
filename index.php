@@ -1,111 +1,74 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registro de Productos</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <meta charset="utf-8">
+    <title>Ingreso de Productos Existentes</title>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+    <!-- JavaScript -->
+<script src="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/alertify.min.js"></script>
+
+<!-- CSS -->
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/alertify.min.css"/>
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/bootstrap.min.css"/>
 </head>
 <body>
-    <div class="container">
-        <div class="row py-3">
-            <div class="col-md-8 offset-md-2">
-            <h1>Registro de Productos</h1>
-                <form action="procesardatos.php" method="POST" role="form">
-                    <div class="row py-3">
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <?php
-                                    if(isset($_POST['send'])):
-                                        //Incluir librería de funciones
-                                        require_once("comprobarimagen.php");
-                                        //Verificar si se han enviado uno o varios archivos
-                                        //valiéndonos de una expresión regular
-                                        $archivos = array();
-                                        if(!empty($_FILES['files']['name'][0])):
-                                            $list = "<ol class=\"list-files\">\n";
-                                                foreach($_FILES['files']['name'] as $i => $archivo):
-                                                    $archivos[$i] = $archivo;
-                                                    //Invocar a la función que verificará mediante
-                                                    //expresión regular si el archivo pasado como
-                                                    //argumento es o no es imagen.
-                                                    $list .= "<li>\n<a href=\"#\">" . $archivos[$i] . comprobarimagen($archivos[$i]) . "</a>\n\t</li>\n";
-                                                endforeach;
-                                            $list .= "</ol>\n";
-                                            echo $list;
-                                        endif;
-                                        //Obteniendo los datos del formulario
-                                    else:
-                                        ?>
-                                        <form action="<?=$_SERVER['PHP_SELF']; ?>" method="POST" enctype="multipart/form-data" class="col s12">
-                                            <div class="row col s12">
-                                                <div class="file-field input-field col s8">
-                                                    <div class="btn">
-                                                        <input type="hidden" name="MAX_FILE_SIZE" value="2097152" placeholder="Seleccione sólo archivos de imagen"/>
-                                                        <input for="img" type="file" name="files[]" multiple="multiple" />
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </form>
-                                <?php
-                                    endif;
-                                ?>
-                            </div>
-                        </div>
-                        
-                    </div>
-                    <div class="row py-3">
-                    <div class="col-md-6">
-                           <div class="form-group">
-                               <label for="codigo">Codigo de Producto</label>
-                               <input type="text" id="codigo" name="codigo" class="form-control" required placeholder="Ingrese el codigo del producto">
-                           </div>
-                        </div>
-                        <div class="col-md-6">
-                           <div class="form-group">
-                               <label for="nombre">Nombre del Producto</label>
-                               <input type="text" id="nombre" name="nombre" class="form-control" required placeholder="Ingrese el nombre del producto">
-                           </div>
-                        </div>
-                    </div>
-                    <div class="row py-3">
-                        <div class="col-md-6">
-                           <div class="form-group">
-                               <label for="precio">Precio</label>
-                               <input type="number" id="precio" name="precio" class="form-control" required placeholder="Ingrese el precio del producto">
-                           </div>
-                        </div>
-                        <div class="col-md-6">
-                           <div class="form-group">
-                               <label for="categoria">Categoria</label>
-                               <select name="categoria" id="categoria" class="form-control" required>
-                                   <option value="textil">Textil</option>
-                                   <option value="promocional">Promocional</option>
-                               </select>
-                           </div>
-                        </div>
-                    </div>
-                    <div class="row py-3">
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label for="descripcion">Descripcion:</label>
-                                <textarea name="descripcion" id="descripcion" class="form-control"></textarea>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                           <div class="form-group">
-                               <label for="existencia">Existencia</label>
-                               <input type="number" id="existencia" name="existencia" class="form-control" required placeholder="Ingrese la cantidad existente">
-                           </div>
-                        </div>
-                    </div>
-                    <div class="row py-3">
-                        <input type="submit" value="Enviar" class="btn btn-success">
-                    </div>
-                </form>
-            </div>
+<div class="container">
+    <h1 class="page-header text-center">Ingresar Productos Existentes</h1>
+    <div class="row">
+        <div class="col-sm-8 col-sm-offset-2">
+            <a href="#addnew" class="btn btn-primary" data-toggle="modal"><span class="glyphicon glyphicon-plus"></span> Agregar Producto</a>
+            
+            <table class="table table-bordered table-striped" style="margin-top:20px;">
+                <thead>
+                    <th>Imagen</th>
+                    <th>Código</th>
+                    <th>Nombre</th>
+                    <th>Precio</th>
+                    <th>Categoría</th>
+                    <th>Descripción</th>
+                    <th>Existencia</th>
+                </thead>
+                <tbody>
+                    <?php
+                    $productos=simplexml_load_file('productos.xml');
+                    foreach ($productos ->producto as $row) {
+                                        
+                        ?>
+                        <tr>
+                            <td><?=$row->imagen?></td>
+                            <td><?=$row->codigo?></td>
+                            <td><?=$row->nombre?></td>
+                            <td><?=$row->precio?></td>
+                            <td><?=$row->categoria?></td>
+                            <td><?=$row->descripcion?></td>
+                            <td><?=$row->existencia?></td>
+                            <td>
+                                <a href="#" class="btn btn-success">Editar</a>
+                                <a href="#delete_<?=$row->codigo?>" data-toggle="modal" class="btn btn-danger">Eliminar</a>
+                            </td>
+                        </tr>
+                        <?php include('borrar_producto.php');?>
+                    <?php
+                    }
+                    ?>
+                </tbody>
+            </table>
         </div>
     </div>
+</div>
+<?php include('nuevo_producto.php');?>
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/bootstrap.min.js"></script>
+<?php
+if(isset($_GET['exito'])){
+
+
+?>
+<script>
+    alertify.success('Producto insertado exitosamente');
+</script>
+<?php
+}
+?>
 </body>
 </html>
