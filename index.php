@@ -42,17 +42,10 @@
                                             <div class="row col s12">
                                                 <div class="file-field input-field col s8">
                                                     <div class="btn">
-                                                        <span>Adjuntar</span>
-                                                        <input type="hidden" name="MAX_FILE_SIZE" value="2097152" />
+                                                        <input type="hidden" name="MAX_FILE_SIZE" value="2097152" placeholder="Seleccione sólo archivos de imagen"/>
                                                         <input type="file" name="files[]" multiple="multiple" />
                                                     </div>
-                                                    <div class="file-path-wrapper">
-                                                        <input type="text" class="file-path validate" placeholder="Seleccione sólo archivos de imagen" />
-                                                    </div>
                                                 </div>
-                                            </div>
-                                            <div class="row col s4">
-                                                <button type="submit" class="btn waves-effect waveslight" name="send">Agregar</button>
                                             </div>
                                         </form>
                                 <?php
@@ -60,7 +53,10 @@
                                 ?>
                             </div>
                         </div>
-                        <div class="col-md-6">
+                        
+                    </div>
+                    <div class="row py-3">
+                    <div class="col-md-6">
                            <div class="form-group">
                                <label for="Codigo">Codigo de Producto</label>
                                <input type="text" id="codigo" name="codigo" class="form-control" required placeholder="Ingrese el codigo del producto">
@@ -73,7 +69,7 @@
                            </div>
                         </div>
                     </div>
-                    <div class="row">
+                    <div class="row py-3">
                         <div class="col-md-6">
                            <div class="form-group">
                                <label for="precio">Precio</label>
@@ -90,15 +86,21 @@
                            </div>
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="col-md-12">
+                    <div class="row py-3">
+                        <div class="col-md-6">
                             <div class="form-group">
                                 <label for="descripcion">Descripcion:</label>
                                 <textarea name="descripcion" id="descripcion" class="form-control"></textarea>
                             </div>
                         </div>
+                        <div class="col-md-6">
+                           <div class="form-group">
+                               <label for="existencia">Existencia</label>
+                               <input type="number" id="existencia" name="existencia" class="form-control" required placeholder="Ingrese la cantidad existente">
+                           </div>
+                        </div>
                     </div>
-                    <div class="row">
+                    <div class="row py-3">
                         <input type="submit" value="Enviar" class="btn btn-success">
                     </div>
                 </form>
