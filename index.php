@@ -20,12 +20,12 @@
             
             <table class="table table-bordered table-striped" style="margin-top:20px;">
                 <thead>
-                    <th>Imagen</th>
                     <th>Código</th>
                     <th>Nombre</th>
-                    <th>Precio</th>
-                    <th>Categoría</th>
                     <th>Descripción</th>
+                    <th>Imagen</th>
+                    <th>Categoría</th>
+                    <th>Precio</th>
                     <th>Existencia</th>
                 </thead>
                 <tbody>
@@ -35,12 +35,12 @@
                                         
                         ?>
                         <tr>
-                            <td><?=$row->imagen?></td>
                             <td><?=$row->codigo?></td>
                             <td><?=$row->nombre?></td>
-                            <td><?=$row->precio?></td>
-                            <td><?=$row->categoria?></td>
                             <td><?=$row->descripcion?></td>
+                            <td><?=$row->imagen?></td>
+                            <td><?=$row->categoria?></td>
+                            <td><?=$row->precio?></td>
                             <td><?=$row->existencia?></td>
                             <td>
                                 <a href="#" class="btn btn-success">Editar</a>
@@ -57,8 +57,8 @@
     </div>
 </div>
 <?php include('nuevo_producto.php');?>
-<script src="assets/js/jquery.min.js"></script>
-<script src="assets/js/bootstrap.min.js"></script>
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
 <?php
 if(isset($_GET['exito'])){
 

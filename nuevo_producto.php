@@ -10,9 +10,36 @@
 			<div class="container-fluid">
 			<form method="POST" action="agregar.php">
                 <div class="row form-group">
+					<div class="col-sm-2">
+						<label class="control-label" for="codigo">Código:</label>
+					</div>
+					<div class="col-sm-10">
+						<input type="text" class="form-control" name="codigo" id="codigo" placeholder="Ingrese el código" required>
+					</div>
+				</div>
+				<div class="row form-group">
+					<div class="col-sm-2">
+						<label class="control-label" for="nombre">Nombre:</label>
+					</div>
+					<div class="col-sm-10">
+						<input type="text" class="form-control" name="nombre" id="nombre" placeholder="Ingrese el nombre" required>
+					</div>
+				</div>
+                <div class="row form-group">
+					<div class="col-sm-2">
+						<label class="control-label" for="descripcion">Descripción:</label>
+					</div>
+					<div class="col-sm-10">
+						<input type="text" min="2" max="5" class="form-control" name="descripcion" id="descripcion" placeholder="Ingrese la descripción" required>
+					</div>
+				</div>
+                <div class="row form-group">
                     <div class="col-sm-2">
+                        <label class="control-label" for="img">Imagen:</label>
+                    </div>
+                    <div class="col-sm-10">
                     <?php
-                        if(isset($_POST['send'])):
+                        if(isset($_POST['add'])):
                             //Incluir librería de funciones
                             require_once("comprobarimagen.php");
                             //Verificar si se han enviado uno o varios archivos
@@ -37,8 +64,8 @@
                                     <div class="row col s12">
                                         <div class="file-field input-field col s8">
                                             <div class="btn">
-                                                <input type="hidden" name="MAX_FILE_SIZE" value="2097152" placeholder="Seleccione sólo archivos de imagen"/>
-                                                <input for="img" type="file" name="files[]" multiple="multiple" />
+                                                <input type="hidden" name="MAX_FILE_SIZE" value="2097152" />
+                                                <input for="img" type="file" name="files[]" multiple="multiple" placeholder="Seleccione sólo archivos de imagen"/>
                                             </div>
                                         </div>
                                     </div>
@@ -50,18 +77,13 @@
                 </div>
 				<div class="row form-group">
 					<div class="col-sm-2">
-						<label class="control-label" for="codigo">Codigo:</label>
+						<label class="control-label" for="categoria" >Categoría:</label>
 					</div>
 					<div class="col-sm-10">
-						<input type="text" class="form-control" name="codigo" id="codigo">
-					</div>
-				</div>
-				<div class="row form-group">
-					<div class="col-sm-2">
-						<label class="control-label" for="nombre">Nombre:</label>
-					</div>
-					<div class="col-sm-10">
-						<input type="text" class="form-control" name="nombre" id="nombre">
+                        <select name="categoria" id="categoria" class="form-control" required>
+                            <option value="reclamo">Textil</option>
+                            <option value="comentario">Promocional</option>
+                        </select>
 					</div>
 				</div>
 				<div class="row form-group">
@@ -69,38 +91,22 @@
 						<label class="control-label" for="precio">Precio:</label>
 					</div>
 					<div class="col-sm-10">
-						<input type="number" min="2" max="5" class="form-control" name="precio" id="precio">
-					</div>
-				</div>
-				<div class="row form-group">
-					<div class="col-sm-2">
-						<label class="control-label" for="categoria" >Categoría:</label>
-					</div>
-					<div class="col-sm-10">
-						<input type="number" min="0" max="10" step="0.1" class="form-control" name="categoria" id="categoria">
+						<input type="number" min="2" max="5" class="form-control" name="precio" id="precio" placeholder="Ingrese el precio" required>
 					</div>
 				</div>
                 <div class="row form-group">
 					<div class="col-sm-2">
-						<label class="control-label" for="descripcion">Descripción:</label>
+						<label class="control-label" for="existencias">Existencias:</label>
 					</div>
 					<div class="col-sm-10">
-						<input type="number" min="2" max="5" class="form-control" name="descripcion" id="descripcion">
-					</div>
-				</div>
-                <div class="row form-group">
-					<div class="col-sm-2">
-						<label class="control-label" for="existencia">Existencia:</label>
-					</div>
-					<div class="col-sm-10">
-						<input type="number" min="2" max="5" class="form-control" name="existencia" id="existencia">
+						<input type="number" min="2" max="5" class="form-control" name="existencias" id="existencias" placeholder="Ingrese la existencia" required>
 					</div>
 				</div>
             </div> 
 			</div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Cancelar</button>
-                <button type="submit" name="add" class="btn btn-primary"><span class="glyphicon glyphicon-floppy-disk"></span> Agregar</a>
+                <button type="submit" name="add" id="add" class="btn btn-primary"><span class="glyphicon glyphicon-floppy-disk"></span> Agregar</a>
 			</form>
             </div>
  

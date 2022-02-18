@@ -1,6 +1,6 @@
 <?php
 $codigo=$_GET['codigo'];
-$materias=simplexml_load_file('productos.xml');
+$productos=simplexml_load_file('productos.xml');
 $indice=0;
 $i=0;
 foreach ($productos->producto as $row) {

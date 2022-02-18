@@ -1,13 +1,13 @@
 <?php
  $productos=simplexml_load_file('productos.xml');
  $producto=$productos->addChild('producto');
- $producto->addChild('imagen',$_POST['imagen']);
  $producto->addChild('codigo',$_POST['codigo']);
  $producto->addChild('nombre',$_POST['nombre']);
- $producto->addChild('precio',$_POST['precio']);
- $producto->addChild('categoria',$_POST['categoia']);
  $producto->addChild('descripcion',$_POST['descripcion']);
- $producto->addChild('existencia',$_POST['existencia']);
+ $producto->addChild('img',$_POST['files[]']);
+ $producto->addChild('categoria',$_POST['categoria']);
+ $producto->addChild('precio',$_POST['precio']);
+ $producto->addChild('existencias',$_POST['existencias']);
  file_put_contents('productos.xml',$productos->asXML());
  header('location:index.php?exito=1');
 ?>
