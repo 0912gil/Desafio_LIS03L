@@ -10,6 +10,12 @@
 <!-- CSS -->
 <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/alertify.min.css"/>
 <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/bootstrap.min.css"/>
+<style>
+    td{
+        vertical-align: middle;
+        text-align: center;
+    }
+</style>
 </head>
 <body>
 <div class="container">
@@ -40,7 +46,7 @@
                             <td><?=$row->descripcion?></td>
                             <td><?=$row->imagen?></td>
                             <td><?=$row->categoria?></td>
-                            <td><?=$row->precio?></td>
+                            <td>$<?=$row->precio?></td>
                             <td><?=$row->existencia?></td>
                             <td>
                                 <a href="#" class="btn btn-success">Editar</a>
