@@ -21,7 +21,7 @@
 <div class="container">
     <h1 class="page-header text-center">Ingresar Productos Existentes</h1>
     <div class="row">
-        <div class="col-sm-8 col-sm-offset-2">
+        <div class="col-md-10 col-md-offset-1">
             <a href="#addnew" class="btn btn-primary" data-toggle="modal"><span class="glyphicon glyphicon-plus"></span> Agregar Producto</a>
             
             <table class="table table-bordered table-striped" style="margin-top:20px;">
@@ -49,8 +49,9 @@
                             <td>$<?=$row->precio?></td>
                             <td><?=$row->existencia?></td>
                             <td>
-                                <a href="#" class="btn btn-success">Editar</a>
-                                <a href="#delete_<?=$row->codigo?>" data-toggle="modal" class="btn btn-danger">Eliminar</a>
+                                <br>
+                                <a href="#" class="btn btn-success">Editar</a><br><br>
+                                <a href="#delete_<?=$row->codigo?>" data-toggle="modal" class="btn btn-danger">Eliminar</a><br><br>
                             </td>
                         </tr>
                         <?php include('borrar_producto.php');?>
