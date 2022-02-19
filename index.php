@@ -84,12 +84,16 @@ foreach ($productos ->producto as $row) {
                             <a href="javascript:void(0);" class="btn btn-info">Más información</a>
 						</div>
 						<div class="col-md-12">
-							<div class="rating">Calificación:
-								<label for="stars-rating-5"><i class="fa fa-star text-danger"></i></label>
-								<label for="stars-rating-4"><i class="fa fa-star text-danger"></i></label>
-								<label for="stars-rating-3"><i class="fa fa-star text-danger"></i></label>
-								<label for="stars-rating-2"><i class="fa fa-star text-warning"></i></label>
-								<label for="stars-rating-1"><i class="fa fa-star text-warning"></i></label>
+							<br>
+							<div class="rating"><b>Stock: </b>
+							<?php
+							if ($row->existencias>0){
+								echo $row->existencias;
+							}
+							else{
+								echo 'No disponible';
+							}
+							?>
 							</div>
 						</div>
 					</div>
