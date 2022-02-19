@@ -39,22 +39,22 @@
                     $productos=simplexml_load_file('productos.xml');
                     foreach ($productos ->producto as $row) {
                                         
-                        ?>
-                        <tr>
-                            <td><?=$row->codigo?></td>
-                            <td><?=$row->nombre?></td>
-                            <td><?=$row->descripcion?></td>
-                            <td><?=$row->imagen?></td>
-                            <td><?=$row->categoria?></td>
-                            <td>$<?=$row->precio?></td>
-                            <td><?=$row->existencia?></td>
-                            <td>
-                                <br>
-                                <a href="#" class="btn btn-success">Editar</a><br><br>
-                                <a href="#delete_<?=$row->codigo?>" data-toggle="modal" class="btn btn-danger">Eliminar</a><br><br>
-                            </td>
-                        </tr>
-                        <?php include('borrar_producto.php');?>
+                            ?>
+                            <tr>
+                                <td><?=$row->codigo?></td>
+                                <td><?=$row->nombre?></td>
+                                <td><?=$row->descripcion?></td>
+                                <td><?=$row->imagen?></td>
+                                <td><?=$row->categoria?></td>
+                                <td><?=$row->precio?></td>
+                                <td><?=$row->existencia?></td>
+                                <td>
+                                    <br>
+                                    <a href="#" class="btn btn-success">Editar</a><br><br>
+                                    <a href="#delete_<?=$row->codigo?>" data-toggle="modal" class="btn btn-danger">Eliminar</a><br><br>
+                                </td>
+                            </tr>
+                            <?php include('borrar_producto.php');?>
                     <?php
                     }
                     ?>
