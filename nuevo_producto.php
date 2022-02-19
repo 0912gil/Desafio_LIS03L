@@ -45,9 +45,9 @@
                             //Verificar si se han enviado uno o varios archivos
                             //valiéndonos de una expresión regular
                             $archivos = array();
-                            if(!empty($_FILES['files']['name'][0])):
+                            if(!empty($_FILES['img']['name'][0])):
                                 $list = "<ol class=\"list-files\">\n";
-                                    foreach($_FILES['files']['name'] as $i => $archivo):
+                                    foreach($_FILES['img']['name'] as $i => $archivo):
                                         $archivos[$i] = $archivo;
                                         //Invocar a la función que verificará mediante
                                         //expresión regular si el archivo pasado como
@@ -65,7 +65,7 @@
                                         <div class="file-field input-field col s8">
                                             <div class="btn">
                                                 <input type="hidden" name="MAX_FILE_SIZE" value="2097152" />
-                                                <input for="img" type="file" name="files[]" multiple="multiple" placeholder="Seleccione sólo archivos de imagen"/>
+                                                <input name="img" id="img" type="file" multiple="multiple" />
                                             </div>
                                         </div>
                                     </div>
