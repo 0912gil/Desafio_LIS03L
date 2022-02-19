@@ -24,7 +24,7 @@
         <descripcion>Sudadera para adulto en combinación de materiales algodón y poliéster de 280g/m2, cuello redondo, sin gorro.</descripcion>
         <img>PROD00003.jpg</img>
         <categoria>Textil</categoria>
-        <precio>10.0</precio>
+        <precio>10.00</precio>
         <existencias>4</existencias>
     </producto>
     <producto>
@@ -33,7 +33,7 @@
         <descripcion>Sudadera para adulto con capucha y cierre de central de zipper. En combinación de materiales algodón y poliéster de 280g/m2. Con cordones a juego y 2 bolsas frontales. Material: 50% Algodón, 50% Poliéster</descripcion>
         <img>PROD00004.jpg</img>
         <categoria>Textil</categoria>
-        <precio>13.0</precio>
+        <precio>13.00</precio>
         <existencias>196</existencias>
     </producto>
     <producto>
@@ -42,7 +42,7 @@
         <descripcion>Blusa Tipo Polo en Liquidación, diversa gama de colores con cuello y puño en contraste. </descripcion>
         <img>PROD00005.png</img>
         <categoria>Textil</categoria>
-        <precio>5.0</precio>
+        <precio>5.00</precio>
         <existencias>500</existencias>
     </producto>
     <producto>
@@ -51,7 +51,7 @@
         <descripcion>Camisa Tipo Polo en Liquidación, diversa gama de colores con cuello y puño en contraste.</descripcion>
         <img>PROD00006.jpg</img>
         <categoria>Textil</categoria>
-        <precio>5.0</precio>
+        <precio>5.00</precio>
         <existencias>28</existencias>
     </producto>
     <producto>
@@ -60,7 +60,7 @@
         <descripcion>Chaleco en resistente combinación de materiales algodón y poliéster de vivos colores. Cierre de zipper principal, multitud de bolsillos frontales y laterales de gran capacidad con cierre de velcro y anilla metálica en el pecho.</descripcion>
         <img>PROD00007.jpg</img>
         <categoria>Textil</categoria>
-        <precio>20.0</precio>
+        <precio>20.00</precio>
         <existencias>15</existencias>
     </producto>
     <producto>
@@ -69,7 +69,7 @@
         <descripcion>Mandil pro de alta calidad en resistente material 100% algodón canvas de 340g/m2. De corte por debajo de la rodilla, con cintas de cuello y cintura en resistente polipiel con ajuste mediante hebilla y reforzado con remaches metálicos. Incluye multitud de bolsillos para los distintos utensilios, con las costuras reforzadas.</descripcion>
         <img>PROD00008.jpg</img>
         <categoria>Textil</categoria>
-        <precio>12.0</precio>
+        <precio>12.00</precio>
         <existencias>25</existencias>
     </producto>
     <producto>
@@ -105,7 +105,7 @@
         <descripcion>Termo de 500ml de capacidad en resistente acero inoxidable. Superficie exterior especialmente diseñada para sublimación. Con tapón de seguridad y presentado en atractiva caja individual de diseño.</descripcion>
         <img>PROD00012.jpg</img>
         <categoria>Promocional</categoria>
-        <precio>9.0</precio>
+        <precio>9.00</precio>
         <existencias>0</existencias>
     </producto>
     <producto>
@@ -132,7 +132,7 @@
         <descripcion>Mochila en acabado denim 600D, de diseño urbano, con acolchado total en todo el cuerpo y cintas de hombros. Bolsa exterior con cierre de zipper, asas de transporte y cintas de hombros reforzadas a juego y compartimento interior acolchado para portátil de hasta 15 pulgadas.</descripcion>
         <img>PROD00015.jpg</img>
         <categoria>Promocional</categoria>
-        <precio>12.0</precio>
+        <precio>12.00</precio>
         <existencias>500</existencias>
     </producto>    
     <producto>

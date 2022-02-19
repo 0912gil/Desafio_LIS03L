@@ -21,7 +21,7 @@
                 <br><br>
                 <div class="card">
                     <div class="card-body">
-                        <form action="" method="POST">
+                        <form action="admin.php" method="POST">
 
                             <label for="user">Nombre de Usuario:</label>
                             <input type="text" name="user" id="user" class="form-control" required>
@@ -29,18 +29,15 @@
                             <label for="pass">Contraseña:</label>
                             <input type="password" name="pass" id="pass" class="form-control" required>
                             <br><br>
-                            <input type="submit" name="entrar" id="entrar" value="Entrar" class="btn btn-success">
+                            <input type="submit" name="entrar" id="entrar" value="Entrar" class="btn btn-success mx-2">
+                            <a href="index.php" class="btn btn-warning">Regresar</a>
                         </form>
                     </div>
                 </div>
                 <?php
-                if(isset($_POST['entrar'])){
-                    if($_POST['user']!=""&&$_POST['user']=="admin"){
-                        if($_POST['pass']!="" && $_POST['pass']=="textil123"){
-                            header('Location: index2.php');
-                        }
-                    }
-                    else{
+
+                if (isset($_GET['failed'])) {
+                    if ($_GET['failed']==1) {
                         echo '<br><div class="alert alert-danger" role="alert">Credenciales Inválidas</div>';
                     }
                 }

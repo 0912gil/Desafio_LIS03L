@@ -18,6 +18,17 @@
 </style>
 </head>
 <body>
+
+<?php
+
+    if($_POST['user']!=""&&$_POST['user']=="admin" &&$_POST['pass']!="" && $_POST['pass']=="textil123"){
+        
+    }
+    else{
+        header('Location: login.php?failed=1');
+    }
+?>
+
 <div class="container">
     <h1 class="page-header text-center">Ingresar Productos Existentes</h1>
     <div class="row">
@@ -69,7 +80,6 @@
 <?php
 if(isset($_GET['exito'])){
 
-
 ?>
 <script>
     alertify.success('Producto insertado exitosamente');
@@ -77,5 +87,6 @@ if(isset($_GET['exito'])){
 <?php
 }
 ?>
+
 </body>
 </html>
