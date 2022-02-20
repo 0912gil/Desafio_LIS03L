@@ -7,6 +7,41 @@ function mostrarTodos()
     $productos = simplexml_load_file('productos.xml');
     foreach ($productos->producto as $row) {
 ?>
+        <!-- PopUp Start-->
+
+        <script>
+            function openForm_<?= $row->codigo ?>() {
+                document.getElementById("myForm_<?= $row->codigo ?>").style.display = "block";
+            }
+
+            function closeForm_<?= $row->codigo ?>() {
+                document.getElementById("myForm_<?= $row->codigo ?>").style.display = "none";
+            }
+        </script>
+
+
+        <div class="form-popup" id="myForm_<?= $row->codigo ?>" style="background-color:white;">
+
+            <div class="container-fluid">
+                <div class="row" style="background-color:white;">
+                    <div class="col-xs-1 col-xs-offset-11 text-right">
+                        <span onclick="closeForm_<?= $row->codigo ?>()" style="color:white;background-color:red;font-size:2em;font-weight:bold;">&nbsp;&nbsp;X&nbsp;&nbsp;</span>
+                    </div>
+                </div>
+            </div>
+            <div class="form-container" style="background-color:white;">
+                <img src="img/<?=$row->img?>" alt="" style="margin-right:20px;max-width:30%;float:left;">
+                <h2 class="text-center"><?= $row->nombre ?></h2>
+                <h6><b>COD: </b><?=$row->codigo?></h6>
+                <h3><b>Precio: </b>$<?=$row->precio?></h3>
+                <h4><b>Categoría: </b><?=$row->categoria?></h4>
+                <p><?=$row->descripcion?></p>
+            </div>
+            <br><br><br><br><br>
+        </div>
+        <!-- PopUp End-->
+
+
         <div class="col-xs-12 col-md-6">
             <!-- First product box start here-->
             <div class="prod-info-main prod-wrap clearfix">
@@ -60,7 +95,7 @@ function mostrarTodos()
                             <div class="row">
                                 <div class="col-md-12">
                                     <a href="javascript:void(0);" class="btn btn-danger">Añadir al Carrito</a><br><br>
-                                    <a href="javascript:void(0);" class="btn btn-info">Más información</a>
+                                    <a href="javascript:openForm_<?= $row->codigo ?>();" class="btn btn-info">Más información</a>
                                 </div>
                                 <div class="col-md-12">
                                     <br>
@@ -151,7 +186,7 @@ function textilDisponibles()
                                 <div class="row">
                                     <div class="col-md-12">
                                         <a href="javascript:void(0);" class="btn btn-danger">Añadir al Carrito</a><br><br>
-                                        <a href="javascript:void(0);" class="btn btn-info">Más información</a>
+                                        <a href="javascript:openForm();" class="btn btn-info">Más información</a>
                                     </div>
                                     <div class="col-md-12">
                                         <br>
@@ -243,7 +278,7 @@ function promocionalDisponibles()
                                 <div class="row">
                                     <div class="col-md-12">
                                         <a href="javascript:void(0);" class="btn btn-danger">Añadir al Carrito</a><br><br>
-                                        <a href="javascript:void(0);" class="btn btn-info">Más información</a>
+                                        <a href="javascript:openForm();" class="btn btn-info">Más información</a>
                                     </div>
                                     <div class="col-md-12">
                                         <br>
@@ -335,7 +370,7 @@ function todosDisponibles()
                                 <div class="row">
                                     <div class="col-md-12">
                                         <a href="javascript:void(0);" class="btn btn-danger">Añadir al Carrito</a><br><br>
-                                        <a href="javascript:void(0);" class="btn btn-info">Más información</a>
+                                        <a href="javascript:openForm();" class="btn btn-info">Más información</a>
                                     </div>
                                     <div class="col-md-12">
                                         <br>
@@ -428,7 +463,7 @@ function textilTodos()
                                 <div class="row">
                                     <div class="col-md-12">
                                         <a href="javascript:void(0);" class="btn btn-danger">Añadir al Carrito</a><br><br>
-                                        <a href="javascript:void(0);" class="btn btn-info">Más información</a>
+                                        <a href="javascript:openForm();" class="btn btn-info">Más información</a>
                                     </div>
                                     <div class="col-md-12">
                                         <br>
@@ -520,7 +555,7 @@ function promocionalTodos()
                                 <div class="row">
                                     <div class="col-md-12">
                                         <a href="javascript:void(0);" class="btn btn-danger">Añadir al Carrito</a><br><br>
-                                        <a href="javascript:void(0);" class="btn btn-info">Más información</a>
+                                        <a href="javascript:openForm();" class="btn btn-info">Más información</a>
                                     </div>
                                     <div class="col-md-12">
                                         <br>
