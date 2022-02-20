@@ -13,7 +13,7 @@
 <div class="container-fluid" style="background-color:#af3120;">
     <div class="row">
         <div class="col-sm-12 text-center">
-            <img src="img/Logo.png" alt="TextilExport">
+            <img src="img/Logo.png" alt="TextilExport" style="max-width:100%;margin:0 auto 0 auto;">
         </div>
     </div>
 </div>
@@ -70,7 +70,7 @@ foreach ($productos ->producto as $row) {
 
 						</h5>
 						<p class="price-container">
-							<span>$<?=$row->precio?></span>
+							<b><span>$<?=$row->precio?></span></b>
 						</p>
 						<span class="tag1"></span> 
 				</div>
@@ -85,13 +85,13 @@ foreach ($productos ->producto as $row) {
 						</div>
 						<div class="col-md-12">
 							<br>
-							<div class="rating"><b>Stock: </b>
+							<div class="rating">
 							<?php
 							if ($row->existencias>0){
-								echo $row->existencias;
+								echo '<b>Stock: </b>'.$row->existencias;
 							}
 							else{
-								echo 'No disponible';
+								echo 'Producto no disponible';
 							}
 							?>
 							</div>

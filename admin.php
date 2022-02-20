@@ -2,8 +2,10 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>Ingreso de Productos Existentes</title>
+    <title>Administración</title>
     <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+
+    </style>
     <!-- JavaScript -->
 <script src="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/alertify.min.js"></script>
 
@@ -25,7 +27,7 @@
         
     }
     else{
-        header('Location: login.php?failed=1');
+        //header('Location: login.php?failed=1');
     }
 ?>
 

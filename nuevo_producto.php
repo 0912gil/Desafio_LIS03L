@@ -4,63 +4,64 @@
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                <center><h4 class="modal-title" id="myModalLabel">Nuevo Producto</h4></center>
+                <center>
+                    <h4 class="modal-title" id="myModalLabel">Nuevo Producto</h4>
+                </center>
             </div>
             <div class="modal-body">
-			<div class="container-fluid">
-			<form method="POST" action="agregar.php">
-                <div class="row form-group">
-					<div class="col-sm-2">
-						<label class="control-label" for="codigo">Código:</label>
-					</div>
-					<div class="col-sm-10">
-						<input type="text" class="form-control" name="codigo" id="codigo" placeholder="Ingrese el código" required>
-					</div>
-				</div>
-				<div class="row form-group">
-					<div class="col-sm-2">
-						<label class="control-label" for="nombre">Nombre:</label>
-					</div>
-					<div class="col-sm-10">
-						<input type="text" class="form-control" name="nombre" id="nombre" placeholder="Ingrese el nombre" required>
-					</div>
-				</div>
-                <div class="row form-group">
-					<div class="col-sm-2">
-						<label class="control-label" for="descripcion">Descripción:</label>
-					</div>
-					<div class="col-sm-10">
-						<input type="text" min="2" max="5" class="form-control" name="descripcion" id="descripcion" placeholder="Ingrese la descripción" required>
-					</div>
-				</div>
-                <div class="row form-group">
-                    <div class="col-sm-2">
-                        <label class="control-label" for="img">Imagen:</label>
-                    </div>
-                    <div class="col-sm-10">
-                    <?php
-                        if(isset($_POST['add'])):
-                            //Incluir librería de funciones
-                            require_once("comprobarimagen.php");
-                            //Verificar si se han enviado uno o varios archivos
-                            //valiéndonos de una expresión regular
-                            $archivos = array();
-                            if(!empty($_FILES['img']['name'][0])):
-                                $list = "<ol class=\"list-files\">\n";
-                                    foreach($_FILES['img']['name'] as $i => $archivo):
-                                        $archivos[$i] = $archivo;
-                                        //Invocar a la función que verificará mediante
-                                        //expresión regular si el archivo pasado como
-                                        //argumento es o no es imagen.
-                                        $list .= "<li>\n<a href=\"#\">" . $archivos[$i] . comprobarimagen($archivos[$i]) . "</a>\n\t</li>\n";
-                                    endforeach;
-                                $list .= "</ol>\n";
-                                echo $list;
-                            endif;
-                            //Obteniendo los datos del formulario
-                            else:
-                    ?>
-                                <form action="<?=$_SERVER['PHP_SELF']; ?>" method="POST" enctype="multipart/form-data" class="col s12">
+                <div class="container-fluid">
+                    <form method="POST" action="agregar.php">
+                        <div class="row form-group">
+                            <div class="col-sm-2">
+                                <label class="control-label" for="codigo">Código:</label>
+                            </div>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" name="codigo" id="codigo" placeholder="Ingrese el código" required>
+                            </div>
+                        </div>
+                        <div class="row form-group">
+                            <div class="col-sm-2">
+                                <label class="control-label" for="nombre">Nombre:</label>
+                            </div>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" name="nombre" id="nombre" placeholder="Ingrese el nombre" required>
+                            </div>
+                        </div>
+                        <div class="row form-group">
+                            <div class="col-sm-2">
+                                <label class="control-label" for="descripcion">Descripción:</label>
+                            </div>
+                            <div class="col-sm-10">
+                                <input type="text" min="2" max="5" class="form-control" name="descripcion" id="descripcion" placeholder="Ingrese la descripción" required>
+                            </div>
+                        </div>
+                        <div class="row form-group">
+                            <div class="col-sm-2">
+                                <label class="control-label" for="img">Imagen:</label>
+                            </div>
+                            <div class="col-sm-10">
+                                <?php
+                                if (isset($_POST['add'])) :
+                                    //Incluir librería de funciones
+                                    require_once("comprobarimagen.php");
+                                    //Verificar si se han enviado uno o varios archivos
+                                    //valiéndonos de una expresión regular
+                                    $archivos = array();
+                                    if (!empty($_FILES['img']['name'][0])) :
+                                        $list = "<ol class=\"list-files\">\n";
+                                        foreach ($_FILES['img']['name'] as $i => $archivo) :
+                                            $archivos[$i] = $archivo;
+                                            //Invocar a la función que verificará mediante
+                                            //expresión regular si el archivo pasado como
+                                            //argumento es o no es imagen.
+                                            $list .= "<li>\n<a href=\"#\">" . $archivos[$i] . comprobarimagen($archivos[$i]) . "</a>\n\t</li>\n";
+                                        endforeach;
+                                        $list .= "</ol>\n";
+                                        echo $list;
+                                    endif;
+                                //Obteniendo los datos del formulario
+                                else :
+                                ?>
                                     <div class="row col s12">
                                         <div class="file-field input-field col s8">
                                             <div class="btn">
@@ -69,47 +70,47 @@
                                             </div>
                                         </div>
                                     </div>
-                                </form>
-                            <?php
-                            endif;
-                            ?>
-                    </div>
+
+                                <?php
+                                endif;
+                                ?>
+                            </div>
+                        </div>
+                        <div class="row form-group">
+                            <div class="col-sm-2">
+                                <label class="control-label" for="categoria">Categoría:</label>
+                            </div>
+                            <div class="col-sm-10">
+                                <select name="categoria" id="categoria" class="form-control" required>
+                                    <option value="reclamo">Textil</option>
+                                    <option value="comentario">Promocional</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row form-group">
+                            <div class="col-sm-2">
+                                <label class="control-label" for="precio">Precio:</label>
+                            </div>
+                            <div class="col-sm-10">
+                                <input type="number" min="2" max="5" class="form-control" name="precio" id="precio" placeholder="Ingrese el precio" required>
+                            </div>
+                        </div>
+                        <div class="row form-group">
+                            <div class="col-sm-2">
+                                <label class="control-label" for="existencias">Existencias:</label>
+                            </div>
+                            <div class="col-sm-10">
+                                <input type="number" min="2" max="5" class="form-control" name="existencias" id="existencias" placeholder="Ingrese la existencia" required>
+                            </div>
+                        </div>
                 </div>
-				<div class="row form-group">
-					<div class="col-sm-2">
-						<label class="control-label" for="categoria" >Categoría:</label>
-					</div>
-					<div class="col-sm-10">
-                        <select name="categoria" id="categoria" class="form-control" required>
-                            <option value="reclamo">Textil</option>
-                            <option value="comentario">Promocional</option>
-                        </select>
-					</div>
-				</div>
-				<div class="row form-group">
-					<div class="col-sm-2">
-						<label class="control-label" for="precio">Precio:</label>
-					</div>
-					<div class="col-sm-10">
-						<input type="number" min="2" max="5" class="form-control" name="precio" id="precio" placeholder="Ingrese el precio" required>
-					</div>
-				</div>
-                <div class="row form-group">
-					<div class="col-sm-2">
-						<label class="control-label" for="existencias">Existencias:</label>
-					</div>
-					<div class="col-sm-10">
-						<input type="number" min="2" max="5" class="form-control" name="existencias" id="existencias" placeholder="Ingrese la existencia" required>
-					</div>
-				</div>
-            </div> 
-			</div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Cancelar</button>
-                <button type="submit" name="add" id="add" class="btn btn-primary"><span class="glyphicon glyphicon-floppy-disk"></span> Agregar</a>
-			</form>
             </div>
- 
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+                <input type="submit" name="add" id="add" class="btn btn-primary" value="Agregar">
+                </form>
+            </div>
+
         </div>
     </div>
 </div>
