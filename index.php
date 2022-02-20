@@ -20,6 +20,28 @@
 
 <div class="container">
 
+<div class="row">
+	<div class="col-xs-12 text-center">
+		<br>
+		Filtros: 
+		<form action="" method="GET" style="display:inline">
+		&nbsp;&nbsp;&nbsp;&nbsp;
+			<label for="categoria">Categoría</label>
+			<select name="categoria" id="categoria">
+				<option value="textil" selected>Textil</option>
+				<option value="promocional">Promocional</option>
+			</select>
+		&nbsp;&nbsp;&nbsp;&nbsp;
+			<label for="stockQ">Stock</label>
+			<select name="stockQ" id="stockQ">
+				<option value="todos" selected>Mostrar todos</option>
+				<option value="disponibles">Sólo productos disponibles</option>
+			</select>
+			&nbsp;&nbsp;&nbsp;&nbsp;
+			<input type="submit" value="Aplicar" class="btn btn-primary">
+		</form>
+	</div>
+</div>
 
 <?php
 $contador=0;
@@ -112,5 +134,9 @@ foreach ($productos ->producto as $row) {
 </a>
 
 </div>
+
+<footer style="background-color: rgba(0, 0, 0, 0.05); padding: 1.5em 0px; font-size:1.1em;" class="text-center">
+	<b>TextilExport</b> - Universidad Don Bosco - Lenguajes Interpretados en el Cliente 03L - Desafío 1
+</footer>
 </body>
 </html>
