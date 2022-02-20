@@ -24,11 +24,12 @@
 	<div class="col-xs-12 text-center">
 		<br>
 		Filtros: 
-		<form action="" method="GET" style="display:inline">
+		<form action="<?=$_SERVER['PHP_SELF']?>" method="GET" style="display:inline">
 		&nbsp;&nbsp;&nbsp;&nbsp;
 			<label for="categoria">Categoría</label>
 			<select name="categoria" id="categoria">
-				<option value="textil" selected>Textil</option>
+			<option value="todos" selected>Todos</option>
+				<option value="textil">Textil</option>
 				<option value="promocional">Promocional</option>
 			</select>
 		&nbsp;&nbsp;&nbsp;&nbsp;
@@ -43,90 +44,35 @@
 	</div>
 </div>
 
-<?php
-$contador=0;
-$productos=simplexml_load_file('productos.xml');
-foreach ($productos ->producto as $row) {
-?>
+<?php 
+require 'mostrar.php';
+//Mostrar todos
 
-<div class="col-xs-12 col-md-6">
-	<!-- First product box start here-->
-	<div class="prod-info-main prod-wrap clearfix">
-		<div class="row">
-				<div class="col-md-5 col-sm-12 col-xs-12">
-					<div class="product-image"> 
-						<img src="img/<?=$row->img?>" class="img-responsive"> 
-
-						<!--Etiquetas a las imágenes -->
-						<?php 
-						if($contador%3==0){
-							echo '<span class="tag2 hot">
-							HOT
-						</span>					
-						<span class="tag2 hot">
-							HOT
-						</span>';
-						}
-						else if($contador%3==1){
-							echo '<span class="tag3 special">
-							HOT
-						</span>					
-						<span class="tag3 special">
-							ESPECIAL
-						</span>';
-						}
-						$contador++;
-						?>
-
-					</div>
-				</div>
-				<div class="col-md-7 col-sm-12 col-xs-12">
-				<div class="product-deatil">
-						<h5 class="name">
-							<a href="#">
-                                <?=$row->nombre?>
-							</a>
-							<a href="#">
-								<span><?=$row->codigo?></span>
-							</a>                            
-
-						</h5>
-						<p class="price-container">
-							<b><span>$<?=$row->precio?></span></b>
-						</p>
-						<span class="tag1"></span> 
-				</div>
-				<div class="description">
-					<p><?=substr($row->descripcion,0,35)?>...</p>
-				</div>
-				<div class="product-info smart-form">
-					<div class="row">
-						<div class="col-md-12"> 
-							<a href="javascript:void(0);" class="btn btn-danger">Añadir al Carrito</a><br><br>
-                            <a href="javascript:void(0);" class="btn btn-info">Más información</a>
-						</div>
-						<div class="col-md-12">
-							<br>
-							<div class="rating">
-							<?php
-							if ($row->existencias>0){
-								echo '<b>Stock: </b>'.$row->existencias;
-							}
-							else{
-								echo 'Producto no disponible';
-							}
-							?>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!-- end product -->
-</div>
-<?php
+if(isset($_GET['categoria'])&&isset($_GET['stockQ'])){
+	if($_GET['categoria']=='textil'&&$_GET['stockQ']=='disponibles'){
+		textilDisponibles();
+	}
+	else if($_GET['categoria']=='promocional'&&$_GET['stockQ']=='disponibles'){
+		promocionalDisponibles();
+	}
+	else if($_GET['categoria']=='textil'&&$_GET['stockQ']=='todos'){
+		textilTodos();
+	}
+	else if($_GET['categoria']=='promocional'&&$_GET['stockQ']=='todos'){
+		promocionalTodos();
+	}
+	else if($_GET['categoria']=='todos'&&$_GET['stockQ']=='disponibles'){
+		todosDisponibles();
+	}
+	else{
+		mostrarTodos();
+	}
 }
+else{
+	mostrarTodos();
+}
+
+
 ?>
 
 <a href="login.php" class="float">
