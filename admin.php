@@ -57,10 +57,10 @@
                                 <td><?=$row->codigo?></td>
                                 <td><?=$row->nombre?></td>
                                 <td><?=$row->descripcion?></td>
-                                <td><?=$row->imagen?></td>
+                                <td><img src="img/<?=$row->img?>" alt="" style="margin-right:30px;max-width:100%;"></td>
                                 <td><?=$row->categoria?></td>
                                 <td><?=$row->precio?></td>
-                                <td><?=$row->existencia?></td>
+                                <td><?=$row->existencias?></td>
                                 <td>
                                     <br>
                                     <a href="#addnew1" data-toggle="modal" class="btn btn-success">Editar</a><br><br>
@@ -90,6 +90,8 @@ if(isset($_GET['exito'])){
 <?php
 }
 ?>
-
+    <footer style="background-color: rgba(0, 0, 0, 0.05); padding: 1.5em 0px; font-size:1.1em;" class="text-center">
+		<b>TextilExport</b> - Universidad Don Bosco - Lenguajes Interpretados en el Servidor 03L - Desafío 1
+	</footer>
 </body>
 </html>
