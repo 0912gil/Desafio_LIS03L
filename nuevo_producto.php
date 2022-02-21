@@ -16,7 +16,7 @@
                                 <label class="control-label" for="codigo">Código:</label>
                             </div>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control" name="codigo" id="codigo" placeholder="Ingrese el código" required>
+                                <input type="text" class="form-control" name="codigo" id="codigo" placeholder="Ingrese el código" required uniqid>
                             </div>
                         </div>
                         <div class="row form-group">
