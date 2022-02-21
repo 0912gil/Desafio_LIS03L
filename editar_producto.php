@@ -67,7 +67,7 @@
                                         <div class="file-field input-field col s8">
                                             <div class="btn">
                                                 <input type="hidden" name="MAX_FILE_SIZE" value="2097152" />
-                                                <input name="img" id="img" type="file" multiple="multiple" value="<?=$row->img?>" />
+                                                <input name="img" id="img" type="file" multiple="multiple" value="img/<?=$row->img?>" />
                                             </div>
                                         </div>
                                     </div>

@@ -1,7 +1,7 @@
 <?php
 $productos=simplexml_load_file('productos.xml');
 $producto=$productos->getDocNamespaces('producto');
-$producto->addChild('codigo',$_POST['codigo']);
+$producto->addChild('codigo');
 $producto->addChild('nombre',$_POST['nombre']);
 $producto->addChild('descripcion',$_POST['descripcion']);
 $producto->addChild('img',$_POST['img']);
