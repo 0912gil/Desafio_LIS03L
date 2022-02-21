@@ -1,5 +1,5 @@
 <?php
-$codigo=$_GET['codigo'];
+$codigo=$_GET['cod'];
 $productos=simplexml_load_file('productos.xml');
 $indice=0;
 $i=0;
@@ -11,6 +11,6 @@ foreach ($productos->producto as $row) {
     $i++;
 }
 unset($productos->producto[$indice]);
-file_put_contents('productos.xml' ,$productos->asXML());
-header('location:index.php');
+file_put_contents('productos.xml',$productos->asXML());
+header('location:admin.php');
 ?>
