@@ -80,7 +80,7 @@
 	</div>
 
 	<footer style="background-color: rgba(0, 0, 0, 0.05); padding: 1.5em 0px; font-size:1.1em;" class="text-center">
-		<b>TextilExport</b> - Universidad Don Bosco - Lenguajes Interpretados en el Cliente 03L - Desafío 1
+		<b>TextilExport</b> - Universidad Don Bosco - Lenguajes Interpretados en el Servidor 03L - Desafío 1
 	</footer>
 
 </body>
