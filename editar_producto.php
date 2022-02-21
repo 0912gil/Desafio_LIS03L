@@ -1,5 +1,5 @@
 <!-- Editar -->
-<!-- Nuevo producto -->
+<!-- Producto -->
 <div class="modal fade" id="addnew1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
@@ -17,7 +17,7 @@
                                 <label class="control-label" for="codigo">Código:</label>
                             </div>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control" name="codigo" id="codigo" placeholder="Ingrese el código" required>
+                                <input type="text" class="form-control" name="codigo" id="codigo" value="<?=$row->codigo?>"  required>
                             </div>
                         </div>
                         <div class="row form-group">
@@ -25,7 +25,7 @@
                                 <label class="control-label" for="nombre">Nombre:</label>
                             </div>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control" name="nombre" id="nombre" placeholder="Ingrese el nombre" required>
+                                <input type="text" class="form-control" name="nombre" id="nombre" value="<?=$row->nombre?>" required>
                             </div>
                         </div>
                         <div class="row form-group">
@@ -33,7 +33,7 @@
                                 <label class="control-label" for="descripcion">Descripción:</label>
                             </div>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control" name="descripcion" id="descripcion" placeholder="Ingrese la descripción" required>
+                                <input type="text" class="form-control" name="descripcion" id="descripcion" value="<?=$row->descripcion?>" required>
                             </div>
                         </div>
                         <div class="row form-group">
@@ -67,7 +67,7 @@
                                         <div class="file-field input-field col s8">
                                             <div class="btn">
                                                 <input type="hidden" name="MAX_FILE_SIZE" value="2097152" />
-                                                <input name="img" id="img" type="file" multiple="multiple" />
+                                                <input name="img" id="img" type="file" multiple="multiple" value="<?=$row->img?>" />
                                             </div>
                                         </div>
                                     </div>
@@ -82,9 +82,9 @@
                                 <label class="control-label" for="categoria">Categoría:</label>
                             </div>
                             <div class="col-sm-10">
-                                <select name="categoria" id="categoria" class="form-control" required>
-                                    <option value="reclamo">Textil</option>
-                                    <option value="comentario">Promocional</option>
+                                <select name="categoria" id="categoria" class="form-control"  required>
+                                    <option value="<?=$row->categoria?>">Textil</option>
+                                    <option value="<?=$row->categoria?>">Promocional</option>
                                 </select>
                             </div>
                         </div>
@@ -93,7 +93,7 @@
                                 <label class="control-label" for="precio">Precio:</label>
                             </div>
                             <div class="col-sm-10">
-                                <input type="number" class="form-control" name="precio" id="precio" placeholder="Ingrese el precio" required>
+                                <input type="number" class="form-control" name="precio" id="precio" value="<?=$row->precio?>" required>
                             </div>
                         </div>
                         <div class="row form-group">
@@ -101,14 +101,14 @@
                                 <label class="control-label" for="existencias">Existencias:</label>
                             </div>
                             <div class="col-sm-10">
-                                <input type="number" class="form-control" name="existencias" id="existencias" placeholder="Ingrese la existencia" required>
+                                <input type="number" class="form-control" name="existencias" id="existencias" value="<?=$row->existencias?>" required>
                             </div>
                         </div>
                 </div>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
-                <input type="submit" name="add" id="add" class="btn btn-primary" value="Agregar">
+                <input type="submit" name="add" id="add" class="btn btn-primary" value="Guardar">
                 </form>
             </div>
 
