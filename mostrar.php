@@ -30,12 +30,20 @@ function mostrarTodos()
                 </div>
             </div>
             <div class="form-container" style="background-color:white;">
-                <img src="img/<?=$row->img?>" alt="" style="margin-right:20px;max-width:30%;float:left;">
+                <img src="img/<?= $row->img ?>" alt="" style="margin-right:20px;max-width:30%;float:left;">
                 <h2 class="text-center"><?= $row->nombre ?></h2>
-                <h6><b>COD: </b><?=$row->codigo?></h6>
-                <h3><b>Precio: </b>$<?=$row->precio?></h3>
-                <h4><b>Categoría: </b><?=$row->categoria?></h4>
-                <p><?=$row->descripcion?></p>
+                <h6><b>COD: </b><?= $row->codigo ?></h6>
+                <h3><b>Precio: </b>$<?= $row->precio ?></h3>
+                <h4><b>Categoría: </b><?= $row->categoria ?></h4>
+                <p><?= $row->descripcion ?></p>
+                <br>
+                <?php
+                if ($row->existencias > 0) {
+                    echo '<b>Unidades disponibles: </b>'.$row->existencias;
+                } else {
+                    echo 'Producto no disponible';
+                }
+                ?>
             </div>
             <br><br><br><br><br>
         </div>
