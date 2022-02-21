@@ -66,7 +66,7 @@
                                         <div class="file-field input-field col s8">
                                             <div class="btn">
                                                 <input type="hidden" name="MAX_FILE_SIZE" value="2097152" />
-                                                <input name="img" id="img" type="file" multiple="multiple" />
+                                                <input name="img" id="img" type="files[]" multiple="multiple" />
                                             </div>
                                         </div>
                                     </div>
@@ -82,8 +82,8 @@
                             </div>
                             <div class="col-sm-10">
                                 <select name="categoria" id="categoria" class="form-control" required>
-                                    <option value="reclamo">Textil</option>
-                                    <option value="comentario">Promocional</option>
+                                    <option value="Textil">Textil</option>
+                                    <option value="Promocional">Promocional</option>
                                 </select>
                             </div>
                         </div>
