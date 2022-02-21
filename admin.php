@@ -63,11 +63,12 @@
                                 <td><?=$row->existencia?></td>
                                 <td>
                                     <br>
-                                    <a href="#" class="btn btn-success">Editar</a><br><br>
+                                    <a href="#addnew1" data-toggle="modal" class="btn btn-success">Editar</a><br><br>
                                     <a href="#delete_<?=$row->codigo?>" data-toggle="modal" class="btn btn-danger">Eliminar</a><br><br>
                                 </td>
                             </tr>
                             <?php include('borrar_producto.php');?>
+                            <?php include('editar_producto.php');?>
                     <?php
                     }
                     ?>

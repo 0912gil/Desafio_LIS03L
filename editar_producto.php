@@ -1,5 +1,6 @@
+<!-- Editar -->
 <!-- Nuevo producto -->
-<div class="modal fade" id="addnew" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<div class="modal fade" id="addnew1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -10,7 +11,7 @@
             </div>
             <div class="modal-body">
                 <div class="container-fluid">
-                    <form method="POST" action="agregar.php">
+                    <form method="POST" action="editar.php">
                         <div class="row form-group">
                             <div class="col-sm-2">
                                 <label class="control-label" for="codigo">Código:</label>
