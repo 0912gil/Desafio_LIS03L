@@ -23,19 +23,19 @@
 
 <?php
 
-    if($_POST['user']!=""&&$_POST['user']=="admin" &&$_POST['pass']!="" && $_POST['pass']=="textil123"){
+    if(($_POST['user']!=""&&$_POST['user']=="admin" &&$_POST['pass']!="" && $_POST['pass']=="textil123")||$_GET['exito']==1){
         
     }
     else{
-        //header('Location: login.php?failed=1');
+        header('Location: login.php?failed=1');
     }
 ?>
 
 <div class="container">
-    <h1 class="page-header text-center">Ingresar Productos Existentes</h1>
+    <h1 class="page-header text-center">Ingresar Productos</h1>
     <div class="row">
         <div class="col-md-10 col-md-offset-1">
-            <a href="#addnew" class="btn btn-primary" data-toggle="modal"><span class="glyphicon glyphicon-plus"></span> Agregar Producto</a>
+            <a href="#addnew" class="btn btn-primary" data-toggle="modal"><span class="glyphicon glyphicon-plus"></span>Agregar Producto</a>
             
             <table class="table table-bordered table-striped" style="margin-top:20px;">
                 <thead>
@@ -85,7 +85,7 @@ if(isset($_GET['exito'])){
 
 ?>
 <script>
-    alertify.success('Producto insertado exitosamente');
+    alertify.success('Acción exitosa');
 </script>
 <?php
 }

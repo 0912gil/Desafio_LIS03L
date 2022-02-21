@@ -12,5 +12,5 @@ foreach ($productos->producto as $row) {
 }
 unset($productos->producto[$indice]);
 file_put_contents('productos.xml',$productos->asXML());
-header('location:admin.php');
+header('location:admin.php?exito=1');
 ?>

@@ -9,5 +9,5 @@
  $producto->addChild('precio',$_POST['precio']);
  $producto->addChild('existencias',$_POST['existencias']);
  file_put_contents('productos.xml',$productos->asXML());
- header('location:index.php?exito=1');
+ header('location:admin.php?exito=1');
 ?>
